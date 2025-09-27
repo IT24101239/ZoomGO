@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AugmentWebviewStateStore">
+    <option name="stateMap">
+      <map>
+        <entry key="CHAT_STATE" value="{&quot;currentConversationId&quot;:&quot;c614c842-ef80-4a08-9be1-30a186e374d3&quot;,&quot;agentExecutionMode&quot;:&quot;manual&quot;,&quot;isPanelCollapsed&quot;:true,&quot;displayedAnnouncements&quot;:[],&quot;conversations&quot;:{&quot;c614c842-ef80-4a08-9be1-30a186e374d3&quot;:{&quot;id&quot;:&quot;c614c842-ef80-4a08-9be1-30a186e374d3&quot;,&quot;createdAtIso&quot;:&quot;2025-09-17T13:52:06.063Z&quot;,&quot;lastInteractedAtIso&quot;:&quot;2025-09-17T13:52:37.173Z&quot;,&quot;chatHistory&quot;:[{&quot;request_id&quot;:&quot;5152f9cd-b7e1-426c-a740-c4654e8d17c3&quot;,&quot;uuid&quot;:&quot;51755ef9-d521-4db1-8207-4c1827d6c438&quot;,&quot;chatItemType&quot;:&quot;agentic-checkpoint-delimiter&quot;,&quot;status&quot;:&quot;success&quot;,&quot;fromTimestamp&quot;:0,&quot;toTimestamp&quot;:1758117126065,&quot;seen_state&quot;:&quot;unseen&quot;},{&quot;chatItemType&quot;:&quot;exchange-pointer&quot;,&quot;exchangeUuid&quot;:&quot;aead0ee5-86de-4f39-9d36-156ec7c994de&quot;,&quot;timestamp&quot;:&quot;2025-09-17T13:52:37.183Z&quot;,&quot;request_message&quot;:&quot;connect admin&quot;,&quot;status&quot;:&quot;success&quot;,&quot;seen_state&quot;:&quot;unseen&quot;}],&quot;feedbackStates&quot;:{&quot;temp-fe-da747b03-aed6-4d2f-a33f-9513031b1bac&quot;:{&quot;selectedRating&quot;:0,&quot;feedbackNote&quot;:&quot;&quot;}},&quot;toolUseStates&quot;:{},&quot;draftExchange&quot;:{&quot;request_message&quot;:&quot;&quot;,&quot;rich_text_json_repr&quot;:{&quot;type&quot;:&quot;doc&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;paragraph&quot;}]},&quot;status&quot;:&quot;draft&quot;},&quot;requestIds&quot;:[],&quot;isPinned&quot;:false,&quot;isShareable&quot;:true,&quot;extraData&quot;:{&quot;isAgentConversation&quot;:true,&quot;hasDirtyEdits&quot;:false},&quot;personaType&quot;:0,&quot;rootTaskUuid&quot;:&quot;f7607ee7-7903-4e49-a5c2-75d775fd8231&quot;}}}" />
+      </map>
+    </option>
+  </component>
+</project>
