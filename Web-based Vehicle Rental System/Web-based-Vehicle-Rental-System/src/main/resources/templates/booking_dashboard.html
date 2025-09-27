@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-orange-600">Manage Bookings</h1>
+    <a href="/admin/dashboard" class="bg-orange-600 text-white px-4 py-2 rounded">Back to Admin</a>
+</header>
+
+<main class="p-6">
+    <h2 class="text-xl font-bold mb-4">Bookings</h2>
+
+    <table class="min-w-full divide-y divide-gray-200 bg-white shadow rounded-lg">
+        <thead class="bg-gray-50">
+        <tr>
+            <th class="px-6 py-3 text-left text-gray-600">ID</th>
+            <th class="px-6 py-3 text-left text-gray-600">User</th>
+            <th class="px-6 py-3 text-left text-gray-600">Vehicle</th>
+            <th class="px-6 py-3 text-left text-gray-600">Start Date</th>
+            <th class="px-6 py-3 text-left text-gray-600">End Date</th>
+            <th class="px-6 py-3 text-left text-gray-600">Status</th>
+            <th class="px-6 py-3 text-left text-gray-600">Actions</th>
+        </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+        <tr th:each="b : ${bookings}" class="hover:bg-gray-50">
+            <td th:text="${b.id}" class="px-6 py-4"></td>
+            <td th:text="${b.user.name}" class="px-6 py-4"></td>
+            <td th:text="${b.vehicle.name}" class="px-6 py-4"></td>
+            <td th:text="${b.startDate}" class="px-6 py-4"></td>
+            <td th:text="${b.endDate}" class="px-6 py-4"></td>
+            <td th:text="${b.status}" class="px-6 py-4"></td>
+            <td class="px-6 py-4 space-x-2">
+                <a th:if="${b.status == 'PENDING'}" th:href="@{'/admin/bookings/approve/' + ${b.id}}" class="text-green-500 hover:underline">Approve</a>
+                <a th:if="${b.status != 'CANCELLED'}" th:href="@{'/admin/bookings/cancel/' + ${b.id}}" class="text-red-500 hover:underline">Cancel</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>
