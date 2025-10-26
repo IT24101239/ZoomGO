@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZoomGo Vehicle Rental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar with Logo -->
+<header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <!-- Logo -->
+        <img src="/images/logo.png" alt="ZoomGo Logo" class="h-10 w-10 object-contain">
+        <!-- Site Title -->
+        <h1 class="text-3xl font-bold text-orange-600">ZoomGo Vehicle Rental</h1>
+    </div>
+
+    <nav class="space-x-4">
+        <a href="/admin/login" class="px-4 py-2 bg-orange-600 text-white rounded hover:bg-green-700">Admin Login</a>
+    </nav>
+</header>
+
+<!-- Hero Section with Background Image -->
+<section class="relative flex flex-col items-center justify-center text-center py-40 bg-cover bg-center" style="background-image: url('/images/vehicle-bg.jpg');">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+    <!-- Text Content -->
+    <div class="relative z-10 text-white px-6">
+        <h2 class="text-5xl font-bold mb-4">Welcome to ZoomGo Vehicle Rental</h2>
+        <p class="text-lg max-w-xl mx-auto">
+            Rent vehicles easily and quickly. Manage bookings, vehicles, and users all in one platform.
+        </p>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-orange-600 mb-12">Why Choose ZoomGo?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Benefit Card -->
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">Easy Online Booking</h3>
+                <p class="text-gray-700">Search, compare, and book vehicles directly without visiting the office or calling.</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">24/7 Availability</h3>
+                <p class="text-gray-700">The system is always available for bookings at any time, from anywhere.</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">Vehicle Availability Transparency</h3>
+                <p class="text-gray-700">Instantly see available vehicles, rental prices, and details like model, type, and capacity.</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">Secure Online Payments</h3>
+                <p class="text-gray-700">Pay with multiple options (credit, debit, etc.) ensuring fast and secure transactions.</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">Booking Management</h3>
+                <p class="text-gray-700">Easily view, modify, or cancel bookings directly through your account.</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">Refund Transparency</h3>
+                <p class="text-gray-700">Know your exact refund instantly if a booking is canceled as per policy.</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">Booking History</h3>
+                <p class="text-gray-700">View all past bookings, payments, and refunds in one place.</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">Notifications & Reminders</h3>
+                <p class="text-gray-700">Get automatic confirmations, reminders, and alerts for bookings and payments.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="py-12 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-orange-600 mb-8">Available Vehicles</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div th:each="vehicle : ${vehicles}" class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2" th:text="${vehicle.name}">Car Name</h3>
+                <p class="text-gray-600 mb-2"><strong>Type:</strong> <span th:text="${vehicle.type}">SUV</span></p>
+                <p class="text-gray-600 mb-2"><strong>Price/Day:</strong> $<span th:text="${vehicle.pricePerDay}">100</span></p>
+                <p class="text-green-600 font-semibold" th:text="${vehicle.available ? 'Available' : 'Not Available'}">Available</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 ZoomGo Vehicle Rental. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

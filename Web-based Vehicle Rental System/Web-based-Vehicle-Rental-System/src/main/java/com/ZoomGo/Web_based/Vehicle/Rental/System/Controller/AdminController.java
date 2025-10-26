@@ -63,6 +63,16 @@ public class AdminController {
         return "admin_form";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editAdminForm(@PathVariable int id, Model model) {
+        AdminDTO admin = adminService.getAdminById(id);
+        model.addAttribute("admin", admin);
+        return "admin_form";
+    }
+
+
+
+
 
 
 }
